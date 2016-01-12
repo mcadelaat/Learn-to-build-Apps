@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget 	xmlns     		= "http://www.w3.org/ns/widgets"
 				xmlns:gap 	= "http://phonegap.com/ns/1.0"
-				id        			= "com.phonegap.helloworld"
+				id        			= "com.eduoinix.test_app"
 				version   		= "1.0.0">
 
-    <name>Hello World</name>
+    <name>Testing Application</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        This is a testing app for PhoneGap
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://phonegap.com" email="mcadelaat@gmail.com">
+        Marco de Laat
     </author>
 
 	<!--
@@ -30,8 +30,7 @@
     <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"               	 	value="2.9.0" />        			<!-- all: current version of PhoneGap -->
-	<preference name="orientation"               				 	value="default" />        		<!-- all: default means both landscape and portrait are enabled -->
+ 	<preference name="orientation"               				 	value="default" />        		<!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"             				 	value="universal" />     		<!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                				 	value="true" />           		<!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"             			 	value="true" />           		<!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
