@@ -17,7 +17,7 @@
 			navigator.geolocation.getCurrentPosition(onSuccess, onError) ;
 	}
 	
-	function onSuccess = (position) {
+	function onSuccess (position) {
 		var element = document.getElementById('geodata') ;
 		element.innerHTML =		'Latitude: '		+	position.coord.latitude	+	'<br />' +
 											'Longitude: '	+	position.coord.longitude	+	'<br />' +		
@@ -27,7 +27,7 @@
 											'Speed: '		+	position.coord.speed		+	'<br />'	;
 	}
 	
-	function onError(error) {
+	function onError (error) {
 		alert('error: '		+ error.code			+ '\n' +
 				'message'	+ error.message	+ '\n'	);	
 	}
