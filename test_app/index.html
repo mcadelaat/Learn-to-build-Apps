@@ -9,44 +9,33 @@
 	var WatchID = null;
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener('deviceready', onDeviceReady, false);
 
     // device APIs are available
     //
     function onDeviceReady() {
-			startWatch() ;
-	}
-
-	
-	function startWatch() {
-		var options = {frequency: 3000};
-		watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+			navigator.geolocation.getCurrentPosition(onSuccess, onError) ;
 	}
 	
-	
-	function stopWatch() {
-		if (watchID) {
-				navigator.accelerometer.clearWatch(watchID);
-				watchID = null;
-		}
+	function onSuccess = (position) {
+		var element = document.getElementById('geodata') ;
+		element.innerHTML =		'Latitude: '		+	position.coord.latitude	+	'<br />' +
+											'Longitude: '	+	position.coord.longitude	+	'<br />' +		
+											'Altitude: '		+	position.coord.altitude	+	'<br />' +
+											'Accuracy: '	+	position.coord.accuracy	+	'<br />' +
+											'Heading: '		+	position.coord.heading	+	'<br />' +
+											'Speed: '		+	position.coord.speed		+	'<br />'	;
 	}
 	
-	function onSuccess(acceleration) {
-		var element = document.getElementById("accelerometer")
-		element.innerHTML = "Acceleraton X: " + acceleration.x + "<br />" +
-										"Acceleration Y: " + acceleration.y + "<br />" +
-										"Acceleration Z: " + acceleration.z + "<br />" +
-										"Timestamp: " + acceleration.timestamp + "<br />";
-	}
-	
-	function onError() {
-		alert("There was a problem");
+	function onError(error) {
+		alert('error: '		+ error.code			+ '\n' +
+				'message'	+ error.message	+ '\n'	);	
 	}
 	
     </script>
   </head>
   <body>
-	<h1>Example</h1>
-    <div id="accelerometer">Waiting for accelerometer...</div>
+	<h1>Geolocation</h1>
+    <div id="geodata">Getting your position...</div>
   </body>
 </html>
