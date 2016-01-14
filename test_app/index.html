@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Phonegap Application</title>
-
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8">
+	<style>
+		html {height:100%;}
+		body {height:100%; margin:0; padding:0)}		
+		#map_placer {height:100%; width:100%;}
+	</style>
+	<title>Phonegap Application</title>
+	<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+	<script type = "text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfLgKEv71AYJuC4PwYz6Wm2KoAUPO22hY&sensor=true"></script>
+	<script type="text/javascript" charset="utf-8">
 
 	var WatchID = null;
     // Wait for device API libraries to load
@@ -18,24 +23,30 @@
 	}
 	
 	function onSuccess (position) {
-		var element = document.getElementById('geodata') ;
-		element.innerHTML =		'Latitude: '		+	position.coord.latitude	+	'<br />' +
-											'Longitude: '	+	position.coord.longitude	+	'<br />' +		
-											'Altitude: '		+	position.coord.altitude	+	'<br />' +
-											'Accuracy: '	+	position.coord.accuracy	+	'<br />' +
-											'Heading: '		+	position.coord.heading	+	'<br />' +
-											'Speed: '		+	position.coord.speed		+	'<br />'	;
+		var LatLng = new google.maps.LatLng(position.coord.latitude,position.coords.longitude);
+		// map options
+		var mapOptions = {
+			center: LatLng,
+			panControl: false,
+			zoomControl: true,
+			zoom: 16,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var mapContent = document.getElementById('map_placer');
+		var map = new google.maps.Map(mapContent, mapOptions);
+		var marker = new google.maps.Marker({position: LatLng, map: map});
 	}
-	
+		
+		
+		
 	function onError (error) {
-		alert('error: '		+ error.code			+ '\n' +
-				'message'	+ error.message	+ '\n'	);	
+		alert(	'error: '		+ error.code		+ '\n' +
+				'message'	+ error.message	+ '\n' );	
 	}
 	
     </script>
   </head>
   <body>
-	<h1>Geolocation</h1>
-    <div id="geodata">Getting your position...</div>
+    <div id="map_placer"></div>
   </body>
 </html>
