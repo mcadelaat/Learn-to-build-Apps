@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+</head> 
+<body> 
+<!-- Homepage -->
+<div data-role="page" id="Home" data-theme='b'>
+
+	<div data-role="header" data-theme='b'>
+		<h1>Homepage</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Hello world</p>
+		<p>Page 2 located in same file</p>	
+		<a href="#page2" data-role="button">Go to Page 2</a>		
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme='b' data-position="fixed">
+		<h3>http://kethelspaland.nl/clubsite/</h3>
+	</div> <!-- /footer -->
+
+</div>
+<!-- /page -->
+<!-- Page2 -->
+<div id="page2" data-role="page" data-title="Multi-Page Template" data-theme= 'd'>
+
+	<div data-role="header" data-theme='b'>
+		<h1>My Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Hello world</p>
+		<a href="#Home" data-role="button" data-rel="back" data-theme="b">Go back to the homepage</a>
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-theme='b' data-position="fixed">
+		<h3>http://kethelspaland.nl/clubsite/</h3>
+	</div> <!-- /footer -->
+
+</div>
+<!-- /page -->
+
+</body>
+</html>
