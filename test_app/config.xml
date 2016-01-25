@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.helloworld"
+        id        = "com.kethelspaland.app"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>Kethel Spaland App</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Dit is de hybrid app van de voetbalereniging Kethel Spaland. Deze app maakt gebruik van het PhoneGap framework.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://kethelpaland.nl/clubsite" email="secretaris@kethelpaland.nl">
+        Marco de Laat
     </author>
 
     <!--
