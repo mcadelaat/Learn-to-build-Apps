@@ -6,64 +6,70 @@
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<style type="text/css">
+			.fb_iframe_widget span{        
+				overflow: initial !important;
+			}
+			.fb_iframe_widget iframe{        
+				width: 340px !important;
+				height: 500px !important;    
+			}
+		</style>
 	</head> 
 <body> 
 <!-- Homepage -->
-<div data-role="page" id="Home" data-theme='b'>
+<div data-role="page" id="Homepage">
 
-	<div data-role="header" data-theme='b'>
+	<div data-role="header">
 		<h1>Homepage</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>Hello world</p>
-		<p>Page 2 located in same file</p>	
-		<a href="#NewsPage" data-role="button">Go to NewsPage</a>		
-	</div><!-- /content -->
-	
-	<div data-role="footer" data-theme='b' data-position="fixed">
-		<h3>http://kethelspaland.nl/clubsite/</h3>
-	</div> <!-- /footer -->
-
-</div>
-<!-- /page -->
-
-<!-- Nieuws Page -->
-<div id="NewsPage" data-role="page" data-title="Multi-Page Template">
-	
-	<div data-role="header">
-		<h1>Nieuws</h1>
-	</div><!-- /header -->
-	
-	<div data-role="content">	
-		<div class="fb-page" data-href="https://www.facebook.com/vvkethelspaland/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-			<div class="fb-xfbml-parse-ignore">
-				<blockquote cite="https://www.facebook.com/vvkethelspaland/">
-					<a href="https://www.facebook.com/vvkethelspaland/">VV Kethel Spaland</a>
-				</blockquote>
-			</div>
-		</div>
+		<p>Hello world</p>	
+		<a href="#Newspage" data-role="button">NewsPage</a>		
 	</div><!-- /content -->
 	
 	<div data-role="footer" data-position="fixed">
 		<h3>http://kethelspaland.nl/clubsite/</h3>
 	</div> <!-- /footer -->
 
-	<!--Facebook NewsPage-->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-	
 </div>
 <!-- /page -->
 
+<!-- NewsPage'-->
+<div data-role="page" id="Newspage">
 
+	<div data-role="header">
+		<h1>Newspage</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<!--Facebook Newsfeed -->
+		<div class="fb-page" data-href="https://www.facebook.com/vvkethelspaland" data-tabs="timeline, events" data-width="320" data-height="480" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+			<div class="fb-xfbml-parse-ignore">
+				<blockquote cite="https://www.facebook.com/vvkethelspaland">
+					<a href="https://www.facebook.com/vvkethelspaland">VV Kethel Spaland</a>
+				</blockquote>
+			</div>
+		</div>
+		<!-- Newsfeed JS -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+	</div><!-- /content -->
 	
+	<div data-role="footer" data-position="fixed">
+		<h3>http://kethelspaland.nl/clubsite/</h3>
+	</div> <!-- /footer -->
+
+</div>
+<!-- /page -->
 
 </body>
 </html>
