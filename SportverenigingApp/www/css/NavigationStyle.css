@@ -1,0 +1,73 @@
+/* Navigation */
+.title {
+	font-size: 16px;
+	line-height: 25px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 7px;
+	color: #eee;
+	border-bottom: 1px solid #222;
+	background: #d0003e;
+}
+
+.sidebarlogo {
+	width: 17%;
+	height: 17%;
+	margin-top: 1%;
+	left: 1%;
+	position: absolute;
+}
+
+.sidebar .sidebartitle {
+	margin-left: 20%;
+	display: inline-block;
+}
+
+.nav li a {
+	position: relative;
+	display: block;
+	padding: 15px 15px 15px 50px;
+	font-size: 12px;
+	color: #eee;
+	border-bottom: 1px solid #222;
+	text-decoration: none;
+}
+
+.nav li a:before {
+	font: 14px fontawesome;
+	position: absolute;
+	top: 14px;
+	left: 20px;
+}
+
+.nav li:nth-child(1) a:before {
+	content: '\f1e3';
+}
+
+.nav li:nth-child(2) a:before {
+	content: '\f1ea';
+}
+
+.nav li:nth-child(3) a:before {
+	content: '\f05a';
+}
+
+.nav li:nth-child(4) a:before {
+	content: '\f02d';
+}
+
+.nav li:nth-child(5) a:before {
+	content: '\f095';
+}
+
+.nav li a:hover {
+	background: #d0003e;
+	color: #eee;
+	cursor: pointer;
+}
+
+.sidebar .nav li a.active {
+	box-shadow: inset 5px 0 0 #245da8, inset 6px 0 0 #222;
+	background: #d0003e;
+	color: #eee;
+}

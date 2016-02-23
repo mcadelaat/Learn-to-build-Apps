@@ -1,0 +1,88 @@
+@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css");
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font: 12px/1 'Montserrat', sans-serif;
+	color: #333;
+	background: #245da8;
+	overflow-x: hidden;
+}
+
+.wrapper {
+	display: flex;
+	min-height: 100%;
+}
+
+.sidebar {
+	position: absolute;
+	width: 220px;
+	background: #245da8;
+}
+
+.content {
+	flex: 1;
+	padding-left: 1%;
+	background: #eee;
+	box-shadow: 0 0 5px black;
+	transform: translate3d(0, 0, 0);
+	transition: transform .3s;
+}
+
+.content h1{
+	display: inline;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 1%
+}
+
+.content.isOpen {
+	transform: translate3d(220px, 0, 0);
+}
+
+.content.isOpen h1{
+	display: inline;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 1%
+}
+
+.button {
+	cursor: pointer;
+}
+
+.button:before {
+	content: '\f0c9';
+	font: 42px fontawesome;
+}
+/* Homepage */
+
+/* Nieuws */
+.fb-page {
+	width: 100%;
+}
+.fb_iframe_widget span{        
+	overflow: initial !important;
+	margin-top: 1%;
+}
+    
+.fb_iframe_widget iframe{        
+	width: 600px !important;
+	height: 600px !important;    
+}
+
+.KSTimeline {
+	display: inline-block !important;
+	margin-left: 4%;
+}
